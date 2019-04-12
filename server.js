@@ -29,6 +29,13 @@ app.get('/about', function(req, res) {
     });
 })
 
+app.get('/home', (req, res) =>  {
+    res.render('home.hbs', {
+        header: "demo app",
+        copyRight: 2019
+    });
+})
+
 app.listen(port, () => {
-    console.log('port is up on:${port}');
+    console.log(`port is up on:${port}`);
 });
