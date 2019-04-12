@@ -1,0 +1,18 @@
+{
+  "name": "diveintonode",
+  "version": "1.0.0",
+  "description": "nodestartup",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "hbs": "^4.0.3",
+    "lodash": "^4.17.11",
+    "yargs": "^4.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mohitsanwal",
+  "license": "ISC"
+}
