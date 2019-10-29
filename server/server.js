@@ -16,6 +16,7 @@ hbs.registerHelper('copyRight', () => {
 hbs.registerHelper("uppercase", (text) => { // pass argument and convert to upper case 
     return text.toUpperCase()
 })
+
 app.set('view engine', 'hbs');  
 
 app.use((req, res, next) => {
