@@ -3,7 +3,7 @@ const express = require('express');
 // const Todo = require("./models/Todo");
 // const user = require("./models/user");
 const hbs = require('hbs');
-const port = process.env.PORT | 3000;
+// const port = process.env.PORT | 3000;
 
 const app = express();
 
@@ -85,6 +85,6 @@ app.get('/about', (req, res) => {
 //     });
 // })
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(process.env.PORT | 3000, '0.0.0.0', () => {
     console.log(`port is up on:${port}`);
 });

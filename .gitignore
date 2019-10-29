@@ -1,2 +1,10 @@
 node_modules/
 documents/
+greeting.txt/
+notes-data.json/
+notes/
+app.js/
+asyncCall/
+mongodata/
+work_json/
+promise/
