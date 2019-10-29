@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 
 app.use(express.static( __dirname + '/../public'));
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
     res.render("home.hbs", {
         message: "welcome to my website",
         date: new Date(),
