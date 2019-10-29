@@ -2,7 +2,7 @@
   "name": "diveintonode",
   "version": "1.0.0",
   "description": "nodestartup",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.14.0",
     "hbs": "^4.0.3",
@@ -15,7 +15,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js node app.js"
+    "start": "node server/server.js"
   },
   "author": "mohitsanwal",
   "license": "ISC"

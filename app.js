@@ -6,9 +6,6 @@ const notes = require('./notes');
 // console.log(process);
 // const command = process.argv[2]; 
 
-
-
-
 const titleOption = {
     describe: "title of node",
     demand: true,
