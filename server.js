@@ -85,6 +85,6 @@ app.get('/about', (req, res) => {
 //     });
 // })
 
-app.listen((port), () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`port is up on:${port}`);
 });
