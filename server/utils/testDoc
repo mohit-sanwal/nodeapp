@@ -1,0 +1,10 @@
+ "test": "mocha **/*.test.js", // to check for file ending with .test.js
+
+ 1.expect
+ 2.toBe
+ 3.toBeA
+ 4.toNotBe
+ 5.toEqual
+ 6.toNotEqual
+ 7.toInclude // should include 
+ 8.toExclude // should not include
