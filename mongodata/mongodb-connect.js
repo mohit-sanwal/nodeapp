@@ -5,23 +5,27 @@ const {MongoClient, ObjectId} = require('mongodb');
 // let obj = new ObjectId();
 // console.log(obj);
 
-const a = {name: "mohit", age:25, location: "gurgaon"}
-const {location, name, age} = a
+// const a = {name: "mohit", age:25, location: "gurgaon"}
+// const {location, name, age} = a
 
-console.log(location);
+// console.log(location);
 
-MongoClient.connect('mongodb://localhost:27017/Todoapp', (err, db) => {
+MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     if (err) {
         console.log('unable to get data');
     }
     console.log('connected to mongo server');
-    // db.collection('Todos').insertOne({
-    //     text: 'something to do',
-    //     completed: false
+
+    // inserting an element in mongodb
+
+    // db.collection('StudentCollection').insertOne({
+    //     name: 'mac',
+    //     class: 12,
     // }, (err, result) => {
     //     if (err) {
     //         console.log('unable to connect');
     //     }
+    //     console.log(result.ops[0]._id.getTimestamp());
     //     console.log(JSON.stringify(result.ops, undefined, 2));
     // });
 
