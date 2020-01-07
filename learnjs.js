@@ -38,4 +38,6 @@ var a = 5;
 console.log(this);
 
 
+// killall -9 node
+
 
