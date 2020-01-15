@@ -50,18 +50,27 @@ UserSchema.methods.generateAuthToken = function() {
     });
 }
 
+// UserSchema.methods.encrptPassword = (password) => {
+//     bcrypt.genSalt(10, (err, salt) => {
+//         bcrypt.hash(password, salt, (err, hash) => {
+//             console.log("password????",password, hash);
+//             return hash;
+//         });
+//     })
+// }
+
 UserSchema.pre('save', function(next) {
     const user = this;
     if (user.isModified('password')) {
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(user.password, salt, (err, hash) => {
                 console.log(hash);
-                user.password = hash;
+                user.password = hash
                 next()
             });
         })
     } else {
-        next();
+        next(); 
     }
 })
 
@@ -82,7 +91,6 @@ UserSchema.statics.findByToken = function (token) {
 }
 
 let User = mongoose.model('User', UserSchema)
-
 module.exports = { User };
 
 
