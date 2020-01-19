@@ -10,7 +10,24 @@ let UserSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: true
-    }
+    },
+    likeCount: {
+        type: Number,
+        default: 0
+    },
+    dislikeCount: {
+        type : Number,
+        default: 0
+    },
+    isLiked : {
+        type: Boolean,
+        default: false
+    },
+    isDisliked : {
+        type: Boolean,
+        default: false
+    },
+    postImage: {type: String}
 })
 
 
