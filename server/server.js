@@ -55,7 +55,7 @@ app.post('/add-post', Upload.single('postImage'), (req, res) => {
         postImage: req.file.path
     })
     post.save().then((result) => {
-        res.send(result);
+        res.status(200).send(result);
     },(err) => {
         res.status(400).send(err);
     })
