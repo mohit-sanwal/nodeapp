@@ -47,6 +47,19 @@ app.use(bodyParser.json());
 app.use(cors())
 
 
+app.get('/', (req, res) => {
+    res.redirect('/todos');
+ });
+
+app.get('/todos', (req, res)=> {
+    Todo.find().then(result => {
+        res.send(result);
+    }, e => {
+        res.status(400).send(e);
+    });
+});
+
+
 app.post('/add-post', Upload.single('postImage'), (req, res) => {
     console.log(req.body.post, req.body.userId, req.file.path, req.body.postImage)
     const post = new Post({
@@ -180,13 +193,7 @@ app.get('/all-posts',  (req, res)=> {
 });
 
 
-app.get('/todos', (req, res)=> {
-    Todo.find().then(result => {
-        res.send(result);
-    }, e => {
-        res.status(400).send(e);
-    });
-});
+
 
 // get by id
 
