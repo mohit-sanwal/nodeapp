@@ -12,16 +12,20 @@ var cors = require('cors');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const app = express();
+const path = require('path');
 
 app.use('/uploads', express.static('uploads'));
+// app.use(express.static(path.join(__dirname, '/uploads/')));
 
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './uploads/');
+        // console.log("__dirname", path.join(__dirname, '/uploads/'))
+        // cb(null, path.join(__dirname, '/uploads/'));
     },
     filename: function(req, file, cb) {
-        cb(null, new Date().toISOString() +file.originalname);
+        cb(null, new Date().toISOString().replace(/:/g, '-') +file.originalname); // for windows add .replace(/:/g, '-')
     }
 });
 
@@ -95,7 +99,7 @@ app.post('/users/register', (req, res) => {
     }
     var body = _.pick(req.body, ['email', 'password']);
     var user = new User(body);
-    
+
     User.findOne({email: user.email}, (err, data) => {
         if (!data) {
             user.save().then((result) => {
@@ -154,14 +158,14 @@ app.post('/users/login', (req, res) => {
 
 
 
-    
+
     // if (!req.body.email || !req.body.password) {
     //     return res.status(404).send();
     // }
     // var body = _.pick(req.body, ['email', 'password']);
     // var user = new User(body);
-    
-     
+
+
     // user.findOne({email:req.body.email, password:req.body.password}).then((result) => {
 
     //     // res.send({result});
