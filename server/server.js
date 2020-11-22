@@ -13,7 +13,6 @@ const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const app = express();
 const path = require('path');
-
 app.use('/uploads', express.static('uploads'));
 // app.use(express.static(path.join(__dirname, '/uploads/')));
 
