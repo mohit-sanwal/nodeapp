@@ -13,7 +13,7 @@ const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const app = express();
 const path = require('path');
-const port  = process.env.PORT || 4000
+const port  = process.env.PORT || 3000
 
 app.use(cors())
 app.use(bodyParser.json());
