@@ -8,13 +8,15 @@ const {mongoose} =  require("./db/mongoose");
 const{ObjectId}  =  require("mongodb");
 const _ = require('lodash');
 const {authenticate }  = require("./middleware/authenticate");
-var cors = require('cors');
+const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const app = express();
 const path = require('path');
-const cors = require('cors');
+const port  = process.env.PORT || 4000
+
 app.use(cors())
+app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));
 // app.use(express.static(path.join(__dirname, '/uploads/')));
 
@@ -45,11 +47,6 @@ const Upload = multer({storage: storage, limits: {
 }});
 
 
-
-const port  = process.env.PORT || 3000
-
-app.use(bodyParser.json());
-app.use(cors())
 
 
 app.get('/', (req, res) => {

@@ -9,7 +9,7 @@ const app = express();
 
 hbs.registerPartials(__dirname + '/views/partials') // '/../views/partials' if server will inside folder server
 
-app.set('view engine', 'hbs'); 
+app.set('view engine', 'hbs');
 
 app.use(express.static( __dirname + '/public'));
 
@@ -24,7 +24,7 @@ hbs.registerHelper('copyRight', () => {
     return new Date().getFullYear()
 })
 
-hbs.registerHelper("uppercase", (text) => { // pass argument and convert to upper case 
+hbs.registerHelper("uppercase", (text) => { // pass argument and convert to upper case
     return text.toUpperCase()
 })
 
@@ -64,7 +64,7 @@ app.get('/about', (req, res) => {
 // app.get('/about', function(req, res) {n
 
 //     //                 age : 22
-//     //             }, 
+//     //             },
 //     //             {
 //     //                 name: 2,
 //     //                 age : 33
@@ -85,6 +85,6 @@ app.get('/about', (req, res) => {
 //     });
 // })
 
-app.listen(process.env.PORT | 3000, '0.0.0.0', () => {
+app.listen(process.env.PORT | 4000, '0.0.0.0', () => {
     console.log(`port is up on:${port}`);
 });
